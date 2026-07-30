@@ -1,4 +1,4 @@
-import { siteConfig, siteUrl } from "./site-config";
+import { plans, siteConfig, siteUrl } from "./site-config";
 
 export const organizationId = `${siteUrl}/#organization`;
 
@@ -54,28 +54,26 @@ export function buildOrganizationJsonLd() {
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Servizi MT Agency",
-      itemListElement: [
-        {
-          "@type": "Offer",
-          price: String(siteConfig.priceMonthly),
+      itemListElement: plans.map((plan) => ({
+        "@type": "Offer",
+        name: plan.name,
+        price: String(plan.price),
+        priceCurrency: siteConfig.priceCurrency,
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          price: String(plan.price),
           priceCurrency: siteConfig.priceCurrency,
-          priceSpecification: {
-            "@type": "UnitPriceSpecification",
-            price: String(siteConfig.priceMonthly),
-            priceCurrency: siteConfig.priceCurrency,
-            unitText: "mese",
-            billingDuration: "P1M",
-          },
-          itemOffered: {
-            "@type": "Service",
-            name: "Gestione Google Business Profile + sito web in abbonamento",
-            description:
-              "Gestione della scheda Google Business Profile (post, risposte alle recensioni, ottimizzazione, Domande&Risposte) e sito vetrina in abbonamento, cancellabile in ogni momento.",
-            provider: { "@id": organizationId },
-            areaServed: siteConfig.areaServed,
-          },
+          unitText: "mese",
+          billingDuration: "P1M",
         },
-      ],
+        itemOffered: {
+          "@type": "Service",
+          name: plan.name,
+          description: plan.tagline,
+          provider: { "@id": organizationId },
+          areaServed: siteConfig.areaServed,
+        },
+      })),
     },
   };
 }

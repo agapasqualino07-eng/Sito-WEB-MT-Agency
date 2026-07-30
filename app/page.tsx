@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CallButton, WhatsAppButton } from "@/components/cta-links";
 import { Faq } from "@/components/faq";
-import { siteConfig } from "@/lib/site-config";
+import { plans, siteConfig, trialMonths } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Local SEO e siti web per artigiani a Catania",
   description:
-    "Gestiamo la tua scheda Google Business Profile e il tuo sito web: più chiamate da clienti che ti cercano già, a 200€/mese, senza vincoli. Audit gratuito.",
+    "Gestiamo la tua scheda Google Business Profile e/o il tuo sito web: più chiamate da clienti che ti cercano già, da 150€/mese, con il primo mese di prova. Audit gratuito.",
   alternates: { canonical: "/" },
 };
 
@@ -37,7 +37,7 @@ const targetGroups = [
   {
     title: "Concessionarie",
     description:
-      "Presenza locale solida per chi cerca il concessionario di zona: scheda Google curata e sito vetrina professionale sempre aggiornato.",
+      "Presenza locale solida per chi cerca il concessionario di zona: scheda Google curata e sito professionale con cui puoi aggiornare tu stesso il parco auto in vendita.",
   },
 ];
 
@@ -68,9 +68,9 @@ const steps = [
   },
   {
     number: "2",
-    title: "Attivazione del bundle",
+    title: "Attivazione del piano scelto",
     description:
-      "Se ti convince, attiviamo scheda Google e sito web. Nessun contratto capestro: parti quando vuoi, a 200€/mese.",
+      "Scegli se attivare solo il sito, solo la scheda Google o entrambi. Il primo mese è di prova: paghi solo dal secondo mese in poi.",
   },
   {
     number: "3",
@@ -82,9 +82,15 @@ const steps = [
 
 const faqItems = [
   {
-    question: "Quanto costa e cosa è incluso?",
+    question: "Quanto costano i piani?",
     answer:
-      "200€/mese, tutto incluso: gestione della scheda Google Business Profile (post, risposte alle recensioni, ottimizzazione, Domande&Risposte) più un sito vetrina in abbonamento. Nessun costo nascosto.",
+      "Tre opzioni: solo sito web (150€/mese), solo gestione Google Business Profile (150€/mese), oppure entrambi in un unico abbonamento (250€/mese, il più scelto). Nessun costo nascosto.",
+  },
+  {
+    question: "Come funziona il primo mese di prova?",
+    answer: `Attivi il piano che preferisci e il primo mese lo usiamo per mettere a posto le basi (scheda ottimizzata e/o sito online): non paghi nulla. L'addebito mensile parte solo dal ${
+      trialMonths + 1
+    }° mese in poi.`,
   },
   {
     question: "Devo firmare un contratto lungo?",
@@ -114,10 +120,9 @@ export default function HomePage() {
               Più clienti dalla ricerca su Google, senza pensieri
             </h1>
             <p className="mt-5 text-lg leading-relaxed text-white/90 sm:text-xl">
-              Gestiamo la tua scheda Google Business Profile e il tuo sito
-              web in un unico abbonamento: più chiamate da chi ti sta già
-              cercando a Catania e provincia, a un prezzo chiaro, senza
-              vincoli.
+              Gestiamo la tua scheda Google Business Profile e/o il tuo sito
+              web: più chiamate da chi ti sta già cercando a Catania e
+              provincia, da 150€/mese, con il primo mese di prova.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <CallButton size="lg" />
@@ -208,27 +213,73 @@ export default function HomePage() {
       {/* Offerta in sintesi */}
       <section className="bg-brand text-white">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-          <div className="flex flex-col items-start justify-between gap-8 rounded-2xl bg-brand-dark p-8 sm:flex-row sm:items-center sm:p-10">
-            <div>
-              <h2 className="text-2xl font-bold sm:text-3xl">
-                Un solo abbonamento, prezzo chiaro
-              </h2>
-              <p className="mt-3 max-w-xl text-white/85">
-                Gestione scheda Google Business Profile + sito web in
-                abbonamento. Cancellabile quando vuoi, senza vincoli lunghi.
-              </p>
-            </div>
-            <div className="shrink-0 text-center">
-              <p className="text-4xl font-extrabold sm:text-5xl">
-                200€<span className="text-lg font-medium">/mese</span>
-              </p>
-              <Link
-                href="/servizi"
-                className="mt-3 inline-block text-sm font-semibold text-white underline underline-offset-4 hover:text-white/80"
+          <div className="text-center">
+            <h2 className="text-2xl font-bold sm:text-3xl">
+              Tre modi per iniziare, prezzo chiaro
+            </h2>
+            <p className="mx-auto mt-3 max-w-xl text-white/85">
+              Sito, scheda Google, o entrambi: scegli tu. Il primo mese è di
+              prova su ogni piano: paghi solo dal secondo mese in poi.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-6 sm:grid-cols-3">
+            {plans.map((plan) => (
+              <div
+                key={plan.id}
+                className={`flex flex-col rounded-2xl p-6 ${
+                  plan.highlighted
+                    ? "bg-white text-ink ring-2 ring-accent"
+                    : "bg-brand-dark text-white"
+                }`}
               >
-                Guarda cosa è incluso
-              </Link>
-            </div>
+                {plan.highlighted && (
+                  <span className="mb-3 inline-flex w-fit items-center rounded-full bg-accent px-2.5 py-0.5 text-xs font-semibold text-white">
+                    Il più scelto
+                  </span>
+                )}
+                <h3 className="font-semibold">{plan.name}</h3>
+                <p
+                  className={`mt-1 text-sm ${
+                    plan.highlighted ? "text-ink-soft" : "text-white/75"
+                  }`}
+                >
+                  {plan.tagline}
+                </p>
+                <p className="mt-5 text-3xl font-extrabold">
+                  {plan.price}€
+                  <span className="text-base font-medium">/mese</span>
+                </p>
+                <p
+                  className={`mt-1 text-xs ${
+                    plan.highlighted ? "text-ink-soft" : "text-white/70"
+                  }`}
+                >
+                  1° mese di prova
+                </p>
+                <ul
+                  className={`mt-5 flex-1 space-y-2 text-sm ${
+                    plan.highlighted ? "text-ink-soft" : "text-white/85"
+                  }`}
+                >
+                  {plan.features.map((feature) => (
+                    <li key={feature} className="flex gap-2">
+                      <span aria-hidden="true">✓</span>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 text-center">
+            <Link
+              href="/servizi"
+              className="text-sm font-semibold text-white underline underline-offset-4 hover:text-white/80"
+            >
+              Guarda cosa è incluso in ogni piano
+            </Link>
           </div>
         </div>
       </section>

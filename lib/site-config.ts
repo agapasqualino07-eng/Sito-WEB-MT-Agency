@@ -12,7 +12,7 @@ export const siteConfig = {
   legalName: "MT Agency",
   tagline: "Più clienti dalla ricerca su Google, senza pensieri",
   description:
-    "MT Agency gestisce la scheda Google Business Profile e il sito web di artigiani ed emergenze in provincia di Catania: più chiamate dalla ricerca locale, a un prezzo trasparente di 200€/mese.",
+    "MT Agency gestisce la scheda Google Business Profile e il sito web di artigiani ed emergenze in provincia di Catania: piani da 150€/mese, con il primo mese di prova.",
   url: siteUrl,
 
   // Contatti — SEGNAPOSTO da compilare
@@ -37,9 +37,50 @@ export const siteConfig = {
     linkedin: "[LINK_LINKEDIN]",
   },
 
-  priceMonthly: 200,
   priceCurrency: "EUR",
 } as const;
+
+// Primo mese di prova su qualsiasi piano: si paga solo dal mese successivo.
+export const trialMonths = 1;
+
+export const plans = [
+  {
+    id: "sito",
+    name: "Solo sito web",
+    price: 150,
+    tagline: "Per chi vuole prima sistemare la vetrina online.",
+    features: [
+      "Sito professionale, mobile-first, veloce da caricare",
+      "Hosting e manutenzione tecnica inclusi",
+      "Aggiornamenti quando servono (servizi, foto, orari, contatti)",
+    ],
+    highlighted: false,
+  },
+  {
+    id: "gbp",
+    name: "Solo Google Business Profile",
+    price: 150,
+    tagline: "Per chi ha già un sito e vuole più chiamate dalla scheda.",
+    features: [
+      "Post periodici e risposte alle recensioni",
+      "Ottimizzazione scheda e sezione Domande&Risposte",
+      "Contenuti scritti con AI, sempre rivisti da una persona",
+    ],
+    highlighted: false,
+  },
+  {
+    id: "bundle",
+    name: "Sito + Google Business Profile",
+    price: 250,
+    tagline: "La combinazione più efficace, a prezzo scontato.",
+    features: [
+      "Tutto quello incluso negli altri due piani",
+      "50€/mese in meno rispetto ad attivarli separatamente",
+      "Sito e scheda Google si rafforzano a vicenda",
+    ],
+    highlighted: true,
+  },
+] as const;
 
 export function whatsappHref(message: string) {
   const encoded = encodeURIComponent(message);
