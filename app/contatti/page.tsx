@@ -17,11 +17,12 @@ export default function ContattiPage() {
       <section className="bg-brand text-white">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
           <h1 className="max-w-2xl text-3xl font-bold leading-tight tracking-tight sm:text-5xl">
-            Parliamo della tua scheda Google
+            Raccontaci a che punto sei
           </h1>
           <p className="mt-5 max-w-2xl text-lg text-white/90">
-            Chiamaci, scrivici su WhatsApp o lascia i tuoi dati: il primo
-            passo è sempre l&apos;audit gratuito, senza impegno.
+            Non serve avere già le idee chiare: chiamaci, scrivici su
+            WhatsApp o lascia i tuoi dati, e partiamo dall&apos;audit
+            gratuito della tua scheda Google, senza impegno.
           </p>
         </div>
       </section>

@@ -64,6 +64,25 @@ export default function ChiSiamoPage() {
       <section className="bg-bg-muted py-16">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <h2 className="text-2xl font-bold tracking-tight text-ink sm:text-3xl">
+            Se hai già sentito parlare male di &quot;agenzie di
+            marketing&quot;, ti capiamo
+          </h2>
+          <p className="mt-4 max-w-3xl text-ink-soft">
+            Tanti artigiani hanno già pagato qualcuno per il sito o i social
+            e si sono ritrovati con un lavoro consegnato e poi mai più
+            aggiornato, o con promesse di risultati che non sono mai
+            arrivate. Non possiamo cancellare quell&apos;esperienza, ma
+            possiamo dirti come lavoriamo noi: partiamo sempre da un audit
+            gratuito della tua scheda Google, non da una promessa. Vedi cosa
+            proponiamo di cambiare prima di spendere un euro, e resti in
+            contatto diretto con chi lavora davvero sul tuo account.
+          </p>
+        </div>
+      </section>
+
+      <section className="py-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <h2 className="text-2xl font-bold tracking-tight text-ink sm:text-3xl">
             La nostra missione
           </h2>
           <p className="mt-4 max-w-3xl text-ink-soft">

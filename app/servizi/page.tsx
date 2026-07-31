@@ -5,9 +5,24 @@ import { plans, trialMonths } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "Servizi e prezzi: sito, Google Business Profile o entrambi",
   description:
-    "Tre piani MT Agency: solo sito web (150€/mese), solo gestione Google Business Profile (150€/mese) o entrambi (250€/mese). Primo mese di prova su ogni piano.",
+    "Non tutti partono dallo stesso punto: scegli se sistemare il sito, la scheda Google o entrambi. Tre piani da 150€/mese, primo mese di prova.",
   alternates: { canonical: "/servizi" },
 };
+
+const startingPoints = [
+  {
+    situation: "Non hai un sito, o è vecchissimo",
+    plan: "Solo sito web",
+  },
+  {
+    situation: "Hai già un sito ma la scheda Google è abbandonata",
+    plan: "Solo Google Business Profile",
+  },
+  {
+    situation: "Vuoi sistemare tutto in una volta",
+    plan: "Sito + Google Business Profile",
+  },
+];
 
 const planItems: Record<(typeof plans)[number]["id"], string[]> = {
   sito: [
@@ -51,18 +66,37 @@ export default function ServiziPage() {
       <section className="bg-brand text-white">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
           <h1 className="max-w-2xl text-3xl font-bold leading-tight tracking-tight sm:text-5xl">
-            Sito, scheda Google, o entrambi: scegli tu
+            Non tutti partono dallo stesso punto
           </h1>
           <p className="mt-5 max-w-2xl text-lg text-white/90">
-            Tre piani, prezzo trasparente, primo mese di prova su ognuno.
-            Lo spieghiamo per intero qui sotto, così arrivi in chiamata già
-            informato.
+            C&apos;è chi deve ancora mettere online un sito decente, e chi ha
+            già un sito ma una scheda Google mai toccata. Per questo ci sono
+            tre piani, non uno solo: scegli quello che ti serve davvero,
+            senza pagare per quello che non ti manca.
           </p>
         </div>
       </section>
 
-      {/* Piani e prezzi */}
+      {/* Da dove iniziare */}
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+        <h2 className="text-xl font-bold tracking-tight text-ink">
+          Da dove vuoi iniziare?
+        </h2>
+        <div className="mt-6 grid gap-4 sm:grid-cols-3">
+          {startingPoints.map((item) => (
+            <div
+              key={item.situation}
+              className="rounded-xl border border-border bg-bg-muted p-5"
+            >
+              <p className="text-sm text-ink-soft">{item.situation}</p>
+              <p className="mt-2 font-semibold text-brand">→ {item.plan}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Piani e prezzi */}
+      <section className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
         <div className="grid gap-6 sm:grid-cols-3">
           {plans.map((plan) => (
             <div
@@ -109,10 +143,11 @@ export default function ServiziPage() {
           </h2>
           <p className="mt-4 text-ink-soft">
             Qualunque piano tu scelga, il primo mese lo usiamo per mettere a
-            posto le basi: scheda Google ottimizzata e/o sito online e non
-            paghi nulla. L&apos;addebito mensile del piano scelto parte solo
-            dal {trialMonths + 1}° mese in poi, ed è cancellabile quando
-            vuoi.
+            posto le basi: scheda Google ottimizzata e/o sito online, senza
+            che tu paghi nulla. L&apos;addebito mensile parte solo dal{" "}
+            {trialMonths + 1}° mese, quando il lavoro di fondo è già fatto e
+            puoi valutare se ha senso continuare. Da lì è cancellabile
+            quando vuoi.
           </p>
         </div>
       </section>
@@ -123,8 +158,9 @@ export default function ServiziPage() {
           Cosa NON è incluso
         </h2>
         <p className="mt-3 max-w-2xl text-ink-soft">
-          Preferiamo dirtelo prima, non dopo: ecco cosa non fa parte di
-          nessuno dei tre piani.
+          Preferiamo dirtelo prima, non dopo, anche se questo significa
+          escluderci da qualche progetto: ecco cosa non fa parte di nessuno
+          dei tre piani.
         </p>
         <ul className="mt-6 grid gap-3 sm:grid-cols-2">
           {notIncluded.map((item) => (
@@ -143,7 +179,7 @@ export default function ServiziPage() {
       <section className="bg-bg-muted py-16">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <h2 className="text-2xl font-bold tracking-tight text-ink sm:text-3xl">
-            Per chi è ideale
+            Questo servizio fa per te se...
           </h2>
           <ul className="mt-6 space-y-3">
             {idealFor.map((item) => (
@@ -161,14 +197,16 @@ export default function ServiziPage() {
       {/* Risultati attesi */}
       <section className="mx-auto max-w-3xl px-4 py-16 text-center sm:px-6">
         <h2 className="text-2xl font-bold tracking-tight text-ink sm:text-3xl">
-          Cosa aspettarti
+          Cosa aspettarti davvero
         </h2>
         <p className="mt-4 text-ink-soft">
           Non prometto numeri che non possiamo controllare: nessuno può
-          garantire quante chiamate riceverai. Quello che facciamo è
-          lavorare con costanza su scheda Google e sito perché chi cerca un
-          artigiano come te a Catania e provincia trovi una presenza online
-          curata, aggiornata e affidabile, invece di una scheda abbandonata.
+          garantire quante chiamate riceverai, e diffida di chi lo fa.
+          Quello che facciamo è lavorare con costanza su scheda Google e
+          sito perché chi cerca un artigiano come te a Catania e provincia
+          trovi una presenza online curata, aggiornata e affidabile, invece
+          di una scheda abbandonata. Il resto — chiudere la chiamata — resta
+          il tuo mestiere.
         </p>
       </section>
 
@@ -180,7 +218,8 @@ export default function ServiziPage() {
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-ink-soft">
             L&apos;audit gratuito non è una demo commerciale: è
-            un&apos;analisi reale della tua scheda Google Business Profile.
+            un&apos;analisi reale della tua scheda Google Business Profile,
+            così scegli il piano giusto sapendo già cosa ti serve.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <CallButton size="lg" />

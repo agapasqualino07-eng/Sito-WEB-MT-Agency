@@ -7,7 +7,7 @@ import { plans, siteConfig, trialMonths } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "Local SEO e siti web per artigiani a Catania",
   description:
-    "Gestiamo la tua scheda Google Business Profile e/o il tuo sito web: più chiamate da clienti che ti cercano già, da 150€/mese, con il primo mese di prova. Audit gratuito.",
+    "Il tuo lavoro è impeccabile, ma online sei invisibile? Sistemiamo la tua scheda Google e/o il tuo sito, da 150€/mese, con il primo mese di prova.",
   alternates: { canonical: "/" },
 };
 
@@ -43,64 +43,64 @@ const targetGroups = [
 
 const results = [
   {
-    title: "Più chiamate dalla ricerca locale",
+    title: "Il telefono squilla di più",
     description:
-      "Scheda Google Business Profile ottimizzata per comparire quando chi ha bisogno di te cerca su Google e Google Maps.",
+      "Quando chi ha bisogno di te cerca su Google o Maps, trova una scheda curata invece che una pagina abbandonata. È lì che si decide se chiama te o il concorrente.",
   },
   {
-    title: "Scheda Google curata ogni settimana",
+    title: "Qualcuno se ne occupa davvero",
     description:
-      "Post, risposte alle recensioni e sezione Domande&Risposte gestiti da noi con l'account Agenzia Google, con contenuti scritti con l'aiuto dell'AI e sempre rivisti da una persona prima della pubblicazione.",
+      "Post, risposte alle recensioni, Domande&Risposte: la tua scheda lavora anche nei momenti in cui tu sei sotto un cantiere o al telefono con un cliente.",
   },
   {
-    title: "Sito professionale sempre aggiornato",
+    title: "Hai una vetrina di cui non ti vergogni",
     description:
-      "Un sito vetrina che racconta chi sei e cosa fai, in abbonamento, senza pensieri tecnici e senza vincoli lunghi.",
+      "Un sito che racconta chi sei e cosa fai davvero, aggiornato nel tempo, senza che tu debba capire come si aggiorna un sito.",
   },
 ];
 
 const steps = [
   {
     number: "1",
-    title: "Audit gratuito della tua scheda Google",
+    title: "Guardiamo insieme la tua scheda",
     description:
-      "Guardiamo insieme la tua scheda Google Business Profile così com'è oggi: cosa funziona, cosa ti sta facendo perdere chiamate.",
+      "Audit gratuito della tua scheda Google Business Profile così com'è oggi: cosa funziona, cosa ti sta facendo perdere chiamate. Zero pressione a comprare.",
   },
   {
     number: "2",
-    title: "Attivazione del piano scelto",
+    title: "Scegli da dove iniziare",
     description:
-      "Scegli se attivare solo il sito, solo la scheda Google o entrambi. Il primo mese è di prova: paghi solo dal secondo mese in poi.",
+      "Solo sito, solo scheda Google, o entrambi: decidi tu in base a cosa ti serve di più adesso. Il primo mese è di prova, paghi solo dal secondo mese in poi.",
   },
   {
     number: "3",
-    title: "Gestione continua",
+    title: "Ce ne occupiamo noi, nel tempo",
     description:
-      "Seguiamo scheda e sito nel tempo: post, recensioni, aggiornamenti. Tu rispondi al telefono, al resto pensiamo noi.",
+      "Scheda e sito restano curati mese dopo mese. Tu rispondi al telefono e fai il tuo lavoro, il resto lo seguiamo noi.",
   },
 ];
 
 const faqItems = [
   {
-    question: "Quanto costano i piani?",
+    question: "Quanto costa e cosa succede se non funziona?",
     answer:
-      "Tre opzioni: solo sito web (150€/mese), solo gestione Google Business Profile (150€/mese), oppure entrambi in un unico abbonamento (250€/mese, il più scelto). Nessun costo nascosto.",
+      "Tre piani: solo sito (150€/mese), sola scheda Google (150€/mese), o entrambi (250€/mese). È un abbonamento mensile, non un contratto: se dopo un po' non ti sta portando valore, lo interrompi e basta.",
   },
   {
     question: "Come funziona il primo mese di prova?",
-    answer: `Attivi il piano che preferisci e il primo mese lo usiamo per mettere a posto le basi (scheda ottimizzata e/o sito online): non paghi nulla. L'addebito mensile parte solo dal ${
+    answer: `Attivi il piano che preferisci e il primo mese lo usiamo per mettere a posto le basi (scheda ottimizzata e/o sito online): non paghi nulla. L'addebito parte solo dal ${
       trialMonths + 1
-    }° mese in poi.`,
+    }° mese, quando il lavoro di fondo è già fatto e puoi vedere se ha senso continuare.`,
   },
   {
-    question: "Devo firmare un contratto lungo?",
+    question: "Ho già provato un'altra agenzia e non ha funzionato: perché con voi dovrebbe cambiare?",
     answer:
-      "No. È un abbonamento mensile cancellabile: se non ti sta portando risultati, puoi interrompere quando vuoi.",
+      "Non possiamo saperlo con certezza prima di vedere la tua scheda: per questo partiamo sempre dall'audit gratuito, non da una promessa. Vedi cosa proponiamo di cambiare prima di spendere un euro, e restiamo raggiungibili direttamente da noi due, non da un call center.",
   },
   {
     question: "Chi scrive i contenuti della mia scheda Google?",
     answer:
-      "Usiamo l'AI per velocizzare la scrittura di post e risposte, ma ogni contenuto viene sempre riletto e approvato da una persona del nostro team prima di essere pubblicato.",
+      "Usiamo l'AI per velocizzare la scrittura di post e risposte, ma ogni contenuto viene sempre riletto e approvato da una persona del nostro team prima di essere pubblicato. Niente esce a tuo nome senza che l'abbia controllato un umano.",
   },
   {
     question: "Lavorate solo con elettricisti e fabbri?",
@@ -117,12 +117,14 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
           <div className="max-w-2xl">
             <h1 className="text-3xl font-bold leading-tight tracking-tight sm:text-5xl">
-              Più clienti dalla ricerca su Google, senza pensieri
+              Più clienti dalla ricerca su Google, senza doverci pensare tu
             </h1>
             <p className="mt-5 text-lg leading-relaxed text-white/90 sm:text-xl">
-              Gestiamo la tua scheda Google Business Profile e/o il tuo sito
-              web: più chiamate da chi ti sta già cercando a Catania e
-              provincia, da 150€/mese, con il primo mese di prova.
+              Mentre lavori, qualcuno ti sta cercando su Google proprio
+              adesso. Se la tua scheda è abbandonata o il tuo sito è fermo
+              da anni, quella chiamata la prende un altro. Ce ne occupiamo
+              noi: scheda Google e sito, da 150€/mese, con il primo mese di
+              prova.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <CallButton size="lg" />
@@ -136,50 +138,50 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Chi aiutiamo */}
+      {/* Il problema */}
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-        <h2 className="text-2xl font-bold tracking-tight text-ink sm:text-3xl">
-          Chi aiutiamo
-        </h2>
-        <p className="mt-3 max-w-2xl text-ink-soft">
-          Lavoriamo con artigiani di servizio ed emergenza e concessionarie
-          in provincia di Catania. Diamo priorità a elettricisti e fabbri,
-          dove la nostra esperienza rende i risultati più veloci.
-        </p>
-        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {targetGroups.map((group) => (
-            <div
-              key={group.title}
-              className="rounded-xl border border-border bg-white p-5"
-            >
-              <div className="flex items-center gap-2">
-                <h3 className="font-semibold text-ink">{group.title}</h3>
-                {group.priority && (
-                  <span className="rounded-full bg-accent/10 px-2 py-0.5 text-xs font-semibold text-accent-dark">
-                    Priorità
-                  </span>
-                )}
-              </div>
-              <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-                {group.description}
-              </p>
-            </div>
-          ))}
+        <div className="max-w-2xl">
+          <h2 className="text-2xl font-bold tracking-tight text-ink sm:text-3xl">
+            Non è un problema di quanto sei bravo
+          </h2>
+          <p className="mt-4 text-ink-soft">
+            Conosciamo artigiani più bravi dei loro concorrenti che perdono
+            lavoro solo perché, online, sono meno visibili. Non è merito: è
+            che nessuno ha mai sistemato la loro scheda Google, e il sito —
+            quando c&apos;è — non lo aggiorna nessuno da anni. Chi ti
+            cercherebbe volentieri trova prima un altro, semplicemente
+            perché si è fatto trovare meglio.
+          </p>
         </div>
       </section>
 
-      {/* Cosa otteniamo per te */}
+      {/* Chi aiutiamo */}
       <section className="bg-bg-muted py-16">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <h2 className="text-2xl font-bold tracking-tight text-ink sm:text-3xl">
-            Cosa otteniamo per te
+            Ti riconosci in una di queste situazioni?
           </h2>
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
-            {results.map((result) => (
-              <div key={result.title}>
-                <h3 className="font-semibold text-ink">{result.title}</h3>
+          <p className="mt-3 max-w-2xl text-ink-soft">
+            Lavoriamo con artigiani di servizio ed emergenza e concessionarie
+            in provincia di Catania. Diamo priorità a elettricisti e fabbri,
+            dove la nostra esperienza rende i risultati più veloci.
+          </p>
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {targetGroups.map((group) => (
+              <div
+                key={group.title}
+                className="rounded-xl border border-border bg-white p-5"
+              >
+                <div className="flex items-center gap-2">
+                  <h3 className="font-semibold text-ink">{group.title}</h3>
+                  {group.priority && (
+                    <span className="rounded-full bg-accent/10 px-2 py-0.5 text-xs font-semibold text-accent-dark">
+                      Priorità
+                    </span>
+                  )}
+                </div>
                 <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-                  {result.description}
+                  {group.description}
                 </p>
               </div>
             ))}
@@ -187,27 +189,46 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Come funziona */}
+      {/* Cosa cambia per te */}
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
         <h2 className="text-2xl font-bold tracking-tight text-ink sm:text-3xl">
-          Come funziona, in 3 passi
+          Cosa cambia per te
         </h2>
-        <ol className="mt-8 grid gap-6 md:grid-cols-3">
-          {steps.map((step) => (
-            <li
-              key={step.number}
-              className="rounded-xl border border-border bg-white p-6"
-            >
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-brand text-sm font-bold text-white">
-                {step.number}
-              </span>
-              <h3 className="mt-4 font-semibold text-ink">{step.title}</h3>
+        <div className="mt-8 grid gap-6 md:grid-cols-3">
+          {results.map((result) => (
+            <div key={result.title}>
+              <h3 className="font-semibold text-ink">{result.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-                {step.description}
+                {result.description}
               </p>
-            </li>
+            </div>
           ))}
-        </ol>
+        </div>
+      </section>
+
+      {/* Come funziona */}
+      <section className="bg-bg-muted py-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <h2 className="text-2xl font-bold tracking-tight text-ink sm:text-3xl">
+            Come funziona, in 3 passi
+          </h2>
+          <ol className="mt-8 grid gap-6 md:grid-cols-3">
+            {steps.map((step) => (
+              <li
+                key={step.number}
+                className="rounded-xl border border-border bg-white p-6"
+              >
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-brand text-sm font-bold text-white">
+                  {step.number}
+                </span>
+                <h3 className="mt-4 font-semibold text-ink">{step.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink-soft">
+                  {step.description}
+                </p>
+              </li>
+            ))}
+          </ol>
+        </div>
       </section>
 
       {/* Offerta in sintesi */}
@@ -215,11 +236,13 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
           <div className="text-center">
             <h2 className="text-2xl font-bold sm:text-3xl">
-              Tre modi per iniziare, prezzo chiaro
+              Scegli da dove iniziare
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-white/85">
-              Sito, scheda Google, o entrambi: scegli tu. Il primo mese è di
-              prova su ogni piano: paghi solo dal secondo mese in poi.
+              Non tutti partono dallo stesso punto: c&apos;è chi ha già un
+              sito ma la scheda Google abbandonata, e chi deve ancora
+              partire da zero. Il primo mese è di prova su ogni piano: paghi
+              solo dal secondo mese in poi.
             </p>
           </div>
 
@@ -294,8 +317,8 @@ export default function HomePage() {
             <p className="mt-4 text-ink-soft">
               Non vendiamo promesse: durante l&apos;audit gratuito ti
               mostriamo, sulla tua stessa scheda Google, cosa manca oggi e
-              cosa cambieremmo. Vedi il lavoro prima di decidere se
-              procedere.
+              cosa cambieremmo. Decidi se procedere dopo aver visto il
+              lavoro, non prima.
             </p>
           </div>
           <div className="rounded-xl border border-border bg-white p-6">
