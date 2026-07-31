@@ -43,6 +43,13 @@ export const siteConfig = {
 // Primo mese di prova su qualsiasi piano: si paga solo dal mese successivo.
 export const trialMonths = 1;
 
+// Dopo questi mesi di abbonamento attivo, il sito (piani "sito" e "bundle")
+// diventa di proprietà del cliente. Da quel momento: manutenzione a
+// siteMaintenancePrice/mese, oppure il cliente tiene il sito così com'è,
+// gratis e senza più manutenzione da parte nostra.
+export const siteOwnershipMonths = 12;
+export const siteMaintenancePrice = 100;
+
 export const plans = [
   {
     id: "sito",
@@ -53,7 +60,9 @@ export const plans = [
       "Sito professionale, mobile-first, veloce da caricare",
       "Hosting e manutenzione tecnica inclusi",
       "Aggiornamenti quando servono (servizi, foto, orari, contatti)",
+      `Dopo ${siteOwnershipMonths} mesi il sito è tuo`,
     ],
+    includesSite: true,
     highlighted: false,
   },
   {
@@ -66,6 +75,7 @@ export const plans = [
       "Ottimizzazione scheda e sezione Domande&Risposte",
       "Contenuti scritti con AI, sempre rivisti da una persona",
     ],
+    includesSite: false,
     highlighted: false,
   },
   {
@@ -77,7 +87,9 @@ export const plans = [
       "Tutto quello incluso negli altri due piani",
       "50€/mese in meno rispetto ad attivarli separatamente",
       "Sito e scheda Google si rafforzano a vicenda",
+      `Dopo ${siteOwnershipMonths} mesi il sito è tuo`,
     ],
+    includesSite: true,
     highlighted: true,
   },
 ] as const;

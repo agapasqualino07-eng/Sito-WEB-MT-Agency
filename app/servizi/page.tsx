@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { CallButton, WhatsAppButton } from "@/components/cta-links";
-import { plans, trialMonths } from "@/lib/site-config";
+import {
+  plans,
+  siteMaintenancePrice,
+  siteOwnershipMonths,
+  trialMonths,
+} from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Servizi e prezzi: sito, Google Business Profile o entrambi",
@@ -30,6 +35,7 @@ const planItems: Record<(typeof plans)[number]["id"], string[]> = {
     "Aggiornamenti quando servono (nuovi servizi, foto, orari, contatti)",
     "Hosting e manutenzione tecnica inclusi",
     "Per le concessionarie: pannello per inserire e aggiornare da soli le auto in vendita, sempre in autonomia",
+    `Dopo ${siteOwnershipMonths} mesi il sito diventa tuo`,
   ],
   gbp: [
     "Pubblicazione periodica di post sulla scheda",
@@ -43,6 +49,7 @@ const planItems: Record<(typeof plans)[number]["id"], string[]> = {
     "Tutto quello incluso nel piano Solo Google Business Profile",
     "50€/mese in meno rispetto ad attivare i due piani separatamente",
     "Un unico referente per sito e scheda: coerenza tra i due canali",
+    `Dopo ${siteOwnershipMonths} mesi il sito diventa tuo`,
   ],
 };
 
@@ -148,6 +155,54 @@ export default function ServiziPage() {
             {trialMonths + 1}° mese, quando il lavoro di fondo è già fatto e
             puoi valutare se ha senso continuare. Da lì è cancellabile
             quando vuoi.
+          </p>
+        </div>
+      </section>
+
+      {/* Dopo 12 mesi il sito è tuo */}
+      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+        <div className="max-w-3xl">
+          <h2 className="text-2xl font-bold tracking-tight text-ink sm:text-3xl">
+            Dopo {siteOwnershipMonths} mesi, il sito è tuo
+          </h2>
+          <p className="mt-4 text-ink-soft">
+            Sui piani che includono il sito (Solo sito web e Sito + Google
+            Business Profile), dopo {siteOwnershipMonths} mesi di abbonamento
+            attivo il sito diventa a tutti gli effetti tuo. Da quel momento
+            hai due strade, senza vincoli:
+          </p>
+          <ul className="mt-5 space-y-3 text-ink-soft">
+            <li className="flex gap-3">
+              <span aria-hidden="true" className="mt-1 text-brand">
+                ●
+              </span>
+              <span>
+                <strong className="text-ink">
+                  Continui con noi la manutenzione a {siteMaintenancePrice}
+                  €/mese
+                </strong>{" "}
+                — aggiornamenti, hosting e assistenza tecnica come prima, a
+                un prezzo più basso perché il grosso del lavoro è già fatto.
+              </span>
+            </li>
+            <li className="flex gap-3">
+              <span aria-hidden="true" className="mt-1 text-brand">
+                ●
+              </span>
+              <span>
+                <strong className="text-ink">
+                  Oppure ti tieni il sito così com&apos;è
+                </strong>{" "}
+                — nessun altro pagamento, nessuna manutenzione da parte
+                nostra, ma resta tuo e continua a funzionare.
+              </span>
+            </li>
+          </ul>
+          <p className="mt-5 text-sm text-ink-soft">
+            Con il piano Bundle non cambia nulla in fattura: i 250€/mese
+            restano invariati, semplicemente da quel momento coprono la
+            manutenzione del sito ({siteMaintenancePrice}€, ormai di tua
+            proprietà) più la gestione della scheda Google (150€).
           </p>
         </div>
       </section>

@@ -2,7 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CallButton, WhatsAppButton } from "@/components/cta-links";
 import { Faq } from "@/components/faq";
-import { plans, siteConfig, trialMonths } from "@/lib/site-config";
+import {
+  plans,
+  siteConfig,
+  siteMaintenancePrice,
+  siteOwnershipMonths,
+  trialMonths,
+} from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Local SEO e siti web per artigiani a Catania",
@@ -96,6 +102,10 @@ const faqItems = [
     question: "Ho già provato un'altra agenzia e non ha funzionato: perché con voi dovrebbe cambiare?",
     answer:
       "Non possiamo saperlo con certezza prima di vedere la tua scheda: per questo partiamo sempre dall'audit gratuito, non da una promessa. Vedi cosa proponiamo di cambiare prima di spendere un euro, e restiamo raggiungibili direttamente da noi due, non da un call center.",
+  },
+  {
+    question: "Il sito resta vostro per sempre o prima o poi diventa mio?",
+    answer: `Sui piani con il sito (Solo sito e Bundle), dopo ${siteOwnershipMonths} mesi di abbonamento attivo il sito diventa a tutti gli effetti tuo. Da lì puoi continuare la manutenzione con noi a ${siteMaintenancePrice}€/mese, oppure tenerti il sito così com'è, senza più pagare nulla.`,
   },
   {
     question: "Chi scrive i contenuti della mia scheda Google?",
